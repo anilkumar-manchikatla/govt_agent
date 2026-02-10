@@ -59,7 +59,7 @@ if st.button("Generate Response"):
             document_text = extract_text_from_pdf(uploaded_file)
 
             response = client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4o-mini",
                 temperature=0.2,
                 max_tokens=900,
                 messages=[
@@ -71,4 +71,5 @@ if st.button("Generate Response"):
 
             st.subheader("📌 AI Draft Output")
             st.write(response.choices[0].message.content)
+
 
