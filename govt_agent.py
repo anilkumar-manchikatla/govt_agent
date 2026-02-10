@@ -9,7 +9,7 @@ import os
 st.set_page_config(page_title="Govt AI Agent", layout="wide")
 
 #client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 # ---------------------------------
 # FIXED GOVT AGENT PROMPT (LOCKED)
@@ -71,3 +71,4 @@ if st.button("Generate Response"):
 
             st.subheader("📌 AI Draft Output")
             st.write(response.choices[0].message.content)
+
