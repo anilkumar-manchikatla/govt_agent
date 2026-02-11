@@ -6,15 +6,14 @@ import os
 # ---------------------------------
 # CONFIG
 # ---------------------------------
-st.set_page_config(page_title="Govt AI Agent", layout="wide")
-
-#client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-client = OpenAI(api_key="sk# -------------------------------------------------
+# -------------------------------------------------
 # API KEY CHECK
 # -------------------------------------------------
 if "OPENAI_API_KEY" not in st.secrets:
     st.error("OpenAI API key not configured.")
     st.stop()
+
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # ---------------------------------
 # FIXED GOVT AGENT PROMPT (LOCKED)
@@ -76,6 +75,7 @@ if st.button("Generate Response"):
 
             st.subheader("📌 AI Draft Output")
             st.write(response.choices[0].message.content)
+
 
 
 
